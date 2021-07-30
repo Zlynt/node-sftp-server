@@ -262,7 +262,7 @@ var SFTPSession = (function (superClass) {
     }
   }
 
-  SFTPSession.prototype.closeSession = function () { //Editado manualmente
+  SFTPSession.prototype.closeSession = function () { //Close the current session
     this.sftpStream.end();
   };
 
@@ -355,7 +355,7 @@ var SFTPSession = (function (superClass) {
     stringflags = SFTP.flagsToString(flags);
     switch (stringflags) {
       case "rx":
-      case "r+": //Modificado aqui, o servidor original não conseguia interpretar isto
+      case "r+": //Modified here, original server could not "handle" this
       case "r":
         // Create a temporary file to hold stream contents.
         var options = {};
