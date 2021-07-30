@@ -146,6 +146,11 @@ session.on('stat', function(path, statkind, statresponder) {
 });
 ```
 
+#### Close the session with the client
+```js
+session.closeSession(); //Closes the session and the socket for that particular client
+```
+
 #### Errors
 
 You can also respond with file not found messages like this:
@@ -210,6 +215,8 @@ may `.pipe()` that into a writable stream of your own, or use it directly.
 
 `.on("rmdir",function (oldPath,callback) { })` - the client wishes to remove a directory. Respond with
 `callback.ok()` or `callback.fail()` or any of the other error types
+
+`.on("error",(errormessage) {})` - returns an error message
 
 ## Error Callbacks
 
